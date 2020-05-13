@@ -1,31 +1,33 @@
  <html>
   <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      /* Will need to pass javascript an array.*/
-     //would like to make scatterplot with a line. 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Days Since January 19, 2020', 'Cases'],
-          ['0',  1],
-          ['155', 1342594]
-        ]);
+   <script>
+function search() {
+  // Declare variables
+  var input, filter, ul, li, a, txtValue;
+  input = document.getElementById('Input');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("dates_list");
+  li = ul.getElementsByTagName('li');
 
-        var options = {
-          title: 'COVID-19 cases',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-        chart.draw(data, options);
-      }
-    </script>
+  // Loop through all list items, and hide those who don't match the search query
+  for (let i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
   </head>
-  <body>
-    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  <body><!-- Might make search box for it. This should really be where the app to do the math for each one is.-->
+    Data by Day:
+   <a href="https://vader-coder.github.io/COVID19/05-13-20">05-13-2020</a>
+   <input type="text" id="Input" onkeyup="search()" placeholder="Search for a date">
+   <ul id="dates_list">
+    <li><a href="https://vader-coder.github.io/COVID19/05-13-20">05-13-2020</a></li>
+   </ul>
   </body>
 </html>

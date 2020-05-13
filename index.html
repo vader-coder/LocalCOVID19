@@ -4,18 +4,17 @@
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
+      /* Will need to pass javascript an array.*/
+     //would like to make scatterplot with a line. 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
+          ['Days Since January 19, 2020', 'Cases'],
+          ['0',  1],
+          ['155', 1342594]
         ]);
 
         var options = {
-          title: 'Company Performance',
+          title: 'COVID-19 cases',
           curveType: 'function',
           legend: { position: 'bottom' }
         };

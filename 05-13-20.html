@@ -37,7 +37,7 @@
         var chart = new google.visualization.LineChart(document.getElementById('total_cases'));
               chart.draw(data, options);
       }
-     function drawNew() {
+     function drawNew() {//for whatever reason, this doesn't work.
       var ndata = google.visualization.arrayToDataTable([
                   ['Days Since January 19, 2020', 'New Cases'],
         ['0', 0], ['1', 0], ['2', 0], ['3', 0], ['4', 0], ['5', 0], ['6', 0], ['7', 0], ['8', 0], ['9', 0],

@@ -3,10 +3,11 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawTotal);
+     google.charts.setOnLoadCallback(drawNew);
       /* Will need to pass javascript an array.*/
      //would like to make scatterplot with a line. 
-      function drawChart() {
+      function drawTotal() {
         var data = google.visualization.arrayToDataTable([
           ['Days Since January 19, 2020', 'Cases'],
           ['0', 0], ['1', 0], ['2', 0], ['3', 0], ['4', 0], ['5', 0], ['6', 0], ['7', 0], ['8', 0], ['9', 0], ['10', 0], 
@@ -35,8 +36,9 @@
 
         var chart = new google.visualization.LineChart(document.getElementById('total_cases'));
               chart.draw(data, options);
-       
-       var ndata = google.visualization.arrayToDataTable([
+      }
+     function drawNew() {
+      var ndata = google.visualization.arrayToDataTable([
                   ['Days Since January 19, 2020', 'New Cases'],
         ['0', 0], ['1', 0], ['2', 0], ['3', 0], ['4', 0], ['5', 0], ['6', 0], ['7', 0], ['8', 0], ['9', 0],
 ['10', 0], ['11', 0], ['12', 0], ['13', 0], ['14', 0], ['15', 0], ['16', 0], ['17', 0], ['18', 0], ['19', 0],
@@ -59,11 +61,11 @@
        };
        var nchart = new google.visualization.LineChart(document.getElementById('new_cases'));
        nchart.draw(ndata, noptions);
-      }
+     }
     </script>
   </head>
   <body>
-   So it pushed 2.
+   So it pushed 3.
     <div id="total_cases" style="width: 900px; height: 500px"></div>
     <div id="new_cases" style="width: 900px; height: 500px"></div>
   </body>

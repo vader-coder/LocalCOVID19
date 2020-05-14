@@ -32,6 +32,9 @@
           curveType: 'function',
           legend: { position: 'bottom' }
         };
+
+        var chart = new google.visualization.LineChart(document.getElementById('total_cases'));
+              chart.draw(data, options);
        
        var ndata = google.visualization.arrayToDataTable([
                   ['Days Since January 19, 2020', 'New Cases'],
@@ -54,11 +57,8 @@
         curveType: 'function',
         legend: { position: 'bottom' }
        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('total_cases'));
        var nchart = new google.visualization.LineChart(document.getElementById('new_cases'));
-        chart.draw(data, options);
-        nchart.draw(ndata, noptions);
+       nchart.draw(ndata, noptions);
       }
     </script>
   </head>

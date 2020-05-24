@@ -1,0 +1,22 @@
+{
+  "name": "localcovid19",
+  "version": "1.0.0",
+  "description": "\"US COVID-19 Outbreak Logistic Model with a Node.js Backend\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vader-coder/LocalCOVID19.git"
+  },
+  "author": "Patrick Wheeler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vader-coder/LocalCOVID19/issues"
+  },
+  "homepage": "https://github.com/vader-coder/LocalCOVID19#readme",
+  "dependencies": {
+    "xlsx": "^0.16.1"
+  }
+}
